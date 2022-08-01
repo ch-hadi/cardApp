@@ -92,7 +92,7 @@ const Social = () => {
               backgroundColor: '#fff',            
             }}>
             <Text style={styles.CardsTopTitle}>Contact the Cave</Text>
-            <Text>
+            <Text style={{ fontFamily: 'Poppins-Regular', fontSize:13,color:'#000000'}}>
               Come join our Private Card Cave Central Facebook Group to receive
               special promotions, discounts and live events! {'\n'}
               {'\n'}With an interactive community of hundreds of sports fans,
@@ -114,8 +114,8 @@ const Social = () => {
               textColor="#000"
               backgroundColor="transparent"
               title={'Join the facebook Group'}
-              borderColor="#000"
-              fontWeight="600"
+              borderColor="#B8B8B8"
+              fontWeight="800"
               onPress={joinFacebook}
               icon={require('../../../assets/icons/facebook.png')}
             />
@@ -126,8 +126,8 @@ const Social = () => {
               textColor="#000"
               backgroundColor="transparent"
               title={'Join Twitter'}
-              borderColor="#000"
-              fontWeight="600"
+              borderColor="#B8B8B8"
+              fontWeight="800"
               onPress={joinTwitter}
               icon={require('../../../assets/icons/twitter.png')}
             />
@@ -136,8 +136,8 @@ const Social = () => {
               textColor="#000"
               backgroundColor="transparent"
               title={'Join Linkedin'}
-              borderColor="#000"
-              fontWeight="600"
+              borderColor="#B8B8B8"
+              fontWeight="800"
               onPress={joinLinkedIn}
               icon={require('../../../assets/icons/linkedIn.png')}
             />
@@ -155,13 +155,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
     width:'100%',  
+    
   },
   title: {
     marginTop: '5%',
-    marginBottom: '2%',
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: '#000',
+    // marginBottom: '2%',
+    fontFamily: 'Poppins-Bold',
+    color:'#000000'
   },
   welcomeImage1: {
     width: '100%',
@@ -178,6 +178,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 30,
     paddingHorizontal: 20,
+    fontFamily:'Poppins-Light'
   },
   seeGradingBtn: {
     position: 'absolute',
@@ -186,11 +187,12 @@ const styles = StyleSheet.create({
     bottom: '5%',
   },
   CardsTopTitle: {
-    fontSize: 17,
-    fontWeight: 'bold',
+    fontSize: 15,
+    fontWeight: '700',
     color: '#000',
     marginVertical: 6,
     paddingHorizontal: 3,
+    fontFamily:'Poppins-Light'
   },
   mostPopularCard: {
     width: '100%',
@@ -210,15 +212,18 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: '#000',
     marginVertical: '2%',
+    fontFamily:'Poppins-Light'
   },
   learnMore: {
     color: '#2240FF',
     fontSize: 15,
     fontWeight: '500',
+    fontFamily:'Poppins-Light'
   },
   joinPlateForm:{
     fontSize:12,
     color:'#000',
-    marginVertical:10
+    marginVertical:30,
+    fontFamily:'Poppins-Light'
   }
 });

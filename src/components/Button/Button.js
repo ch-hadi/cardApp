@@ -10,7 +10,8 @@ export default function AButton({
   textColor,
   icon,
   marginVertical,
-  Padding
+  Padding,
+  fontSize
 }) {
   return (
     <TouchableOpacity
@@ -21,7 +22,6 @@ export default function AButton({
           backgroundColor: backgroundColor ? backgroundColor : '#2240FF',
           flexDirection: 'row',
           justifyContent: 'center',
-          // marginVertical:marginVertical? marginVertical : ""
           marginVertical: marginVertical ? marginVertical : 0,
           padding:Padding ? Padding : 15
         },
@@ -34,6 +34,7 @@ export default function AButton({
           {
             fontWeight: fontWeight ? fontWeight : '600',
             color: textColor ? textColor : 'white',
+            fontSize: fontSize? fontSize : 15
           },
         ]}>
         {title}
@@ -54,6 +55,6 @@ const styles = StyleSheet.create({
   },
   Text: {
     color: 'white',
-    fontSize: 17,
+    fontFamily:'Poppins-Regular'
   },
 });

@@ -45,7 +45,7 @@ const About = ({navigation}) => {
         <View
           style={{width: '40%', flexDirection: 'row', alignItems: 'center'}}>
           <Image source={require('../../../assets/icons/chevronLeft.png')} />
-          <Text style={{fontSize: 18, marginLeft: '5%', color: '#2240FF'}} onPress={goBack}>
+          <Text style={{fontSize: 15,fontFamily:'Poppins-Light', marginLeft: '5%', color: '#2240FF'}} onPress={goBack}>
             Back
           </Text>
         </View>
@@ -53,7 +53,7 @@ const About = ({navigation}) => {
           style={{
             width: '60%',
           }}>
-          <Text style={{fontWeight: '600', fontSize: 19, color: '#000'}}>
+          <Text style={{ fontFamily: 'Poppins-Bold', fontSize: 15, color: '#000'}}>
             About
           </Text>
         </View>
@@ -150,10 +150,16 @@ const styles = StyleSheet.create({
     marginVertical: 15,
   },
   CardsTopTitle: {
-    fontSize: 17,
-    fontWeight: 'bold',
+    fontSize: 15,
+    // fontWeight: 'bold',
     color: '#000',
     marginVertical: 6,
     paddingHorizontal: 3,
+    fontFamily:'Poppins-Bold'
   },
+  storyContent:{
+    fontFamily:'Poppins-Light',
+    color:'#000000',
+    fontSize:13
+  }
 });

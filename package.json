@@ -10,18 +10,30 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/hooks": "^2.8.1",
     "@react-navigation/bottom-tabs": "^6.3.2",
     "@react-navigation/native": "^6.0.11",
     "@react-navigation/native-stack": "^6.7.0",
+    "@reduxjs/toolkit": "^1.8.3",
+    "axios": "^0.27.2",
     "babel-plugin-macros": "^3.1.0",
+    "i": "^0.3.7",
+    "npm": "^8.15.1",
     "react": "18.0.0",
     "react-native": "^0.69.1",
     "react-native-animated-pagination-dot": "^0.3.2",
     "react-native-beautiful-horizontal-list": "^0.1.2",
     "react-native-elements": "^3.4.2",
+    "react-native-email": "^2.1.0",
+    "react-native-pager-view": "^5.4.25",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^3.15.0",
-    "react-native-vector-icons": "^9.2.0"
+    "react-native-splash-screen": "^3.3.0",
+    "react-native-tab-view": "^3.1.1",
+    "react-native-toast-message": "^2.1.5",
+    "react-native-vector-icons": "^9.2.0",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

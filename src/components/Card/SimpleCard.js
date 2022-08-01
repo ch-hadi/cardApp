@@ -15,7 +15,7 @@ const SimpleCard = ({title, buttonTitle,source}) => {
       <View style={styles.titleContentView}>
       <Text style={styles.ebyTitle}>{title}</Text>
       <View style={styles.btn}>
-      <AButton title={buttonTitle} onPress={goEbayStore} borderColor='white' fontWeight='400' borderWidth='1' />
+      <AButton title={buttonTitle} fontSize={13} Padding={5} onPress={goEbayStore} borderColor='white' borderWidth='1' />
       </View>
      </View>
      <View style={styles.imgView}>
@@ -55,8 +55,9 @@ const styles = StyleSheet.create({
     marginVertical:20,
     marginHorizontal:'6%',
     color:'#fff',
-    fontSize:20,
-    fontWeight:'bold'
+    fontSize:18,
+    // fontWeight:'bold'
+    fontFamily:'Poppins-Regular'
   },
 
 

@@ -5,7 +5,7 @@ import AButton from '../Button/Button';
 const persons = [
   {
     id: '1',
-    name: '1-4 CARDS: Add $3.75 For Return Shipping',
+    name: '1-4 CARDS: Add $3.75 For Return Shipping  ',
     priceSubHeading: 'CSG GRADING SERVICE',
   },
   {
@@ -37,12 +37,12 @@ const PriceCard = ({
   iconColor,
 }) => {
   const downloadFromGrding = () => {
-    alert('Download From Grading');
+    alert(bgColor);
   };
-
+  
   return (
-    <View>
-      <View style={[styles.container1, {backgroundColor: bgColor}]}>
+    <View style={{flex:1, width:330 , marginRight:10,}}>
+          <View style={[styles.container1, {backgroundColor: bgColor}]}>
         {bgColor ? (
           <View
             style={{
@@ -52,10 +52,12 @@ const PriceCard = ({
               borderRadius: 5,
             }}>
             <AButton
-              Padding={10}
+              Padding={5}
               title={'POPULAR'}
               backgroundColor={'#F3B007'}
               borderColor="transparent"
+              fontWeight={'700'}
+              fontSize={13}
             />
           </View>
         ) : (
@@ -95,18 +97,18 @@ const PriceCard = ({
         </View>
         <View
           style={{
-            borderBottomWidth: 0.5,
+            borderBottomWidth: 1,
             width: '90%',
-            backgroundColor: bgColor ? '#fff' : '#000',
+            borderBottomColor: bgColor ? 'white' : '#000',
             marginTop: 30,
             // marginVertical:10
           }}
         />
         <View
-          style={{width: '100%', marginVertical: 15, paddingHorizontal: 20}}>
+          style={{ marginVertical: 15,}}>
           {persons.map(item => (
             <View
-              style={{width: '100%', flexDirection: 'row', marginVertical: 7}}
+              style={{flexDirection: 'row', marginVertical: 5, alignItems:'center'}}
               key={item.id}>
               <Icon
                 name="done"
@@ -116,11 +118,12 @@ const PriceCard = ({
               <Text
                 key={item.id}
                 style={{
-                  fontSize: 13,
-                  marginLeft: 8,
+                  fontSize: 12,
+                  paddingLeft: 10,
                   color: bgColor ? '#fff' : '#000',
                   fontFamily: 'Poppins-Light',
-                  fontWeight: '600',
+                  // width:'90%',
+    
                 }}>
                 {item.name}
               </Text>
@@ -131,10 +134,10 @@ const PriceCard = ({
       <View style={styles.content}>
         <Text
           style={{
-            width: '100%',
-            paddingHorizontal: '7%',
             fontFamily: 'Poppins-Light',
             fontSize: 12,
+            paddingHorizontal: '1%',
+            color:'black'
           }}>
           *CARDS MUST BE $999 OR LESS IN VALUE FOR ECONOMY, BETWEEN $1,000 AND
           $1,499 FOR REGULAR, AND BETWEEN $1,500 AND $2,499 FOR EXPRESS. YOU
@@ -148,23 +151,25 @@ const PriceCard = ({
         <Text
           style={{
             width: '100%',
-            paddingHorizontal: '2%',
+            paddingHorizontal: '1%',
             fontFamily: 'Poppins-Light',
             fontSize: 12,
             marginVertical: '8%',
+            color:'black'
           }}>
           <Text style={{fontFamily: 'Poppins-Bold'}}>Note:</Text> PAYMENT IS DUE
           ONCE THE ORDER IS GRADED AND GRADES ARE POPULATED BY PSA. WE WILL
           CONTACT YOU WITH AN INVOICE, WHICH WILL DETAIL THE PRICE. YOU THEN PAY
           VIA PAYPAL, CHECK OR MONEY ORDER.
         </Text>
-        <View style={{width: '80%'}}>
+        <View style={{width: '80%',marginBottom:'5%'}}>
           <AButton
             title={'Download Grading Form'}
             borderColor="#2240FF"
             backgroundColor={'transparent'}
             textColor="#2240FF"
             onPress={downloadFromGrding}
+            Padding={10}
           />
         </View>
       </View>
@@ -178,14 +183,13 @@ const styles = StyleSheet.create({
   container1: {
     flex: 1,
     borderRadius: 10,
-    // height: 420,
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: 'rgba(100,100,100,0.5)',
     borderWidth: 1,
-    marginRight: 10,
-    width: '95%',
-    paddingVertical: 80,
+    paddingVertical: 60,
+    paddingHorizontal:10,
+   
   },
   titlesContainer: {
     flexDirection: 'row',
@@ -215,9 +219,8 @@ const styles = StyleSheet.create({
     color: '#000',
     fontFamily: 'Poppins-Light',
     marginVertical: 25,
-    // paddingHorizontal: '10%',
+    width:'100%',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 360,
   },
 });

@@ -20,15 +20,17 @@ const styles = StyleSheet.create({
     marginVertical:'5%',
   },
   textWelcome:{
-    fontWeight:'700',
+    // fontWeight:'700',
+    fontFamily: 'Poppins-Bold',
     color:'#000',
-    fontSize:27
+    fontSize:25
 },
 content:{
   color:'#000',
   fontSize:13,
-  marginVertical:13,
-  fontWeight:'400'
+  // marginVertical:13,
+  // fontWeight:'400'
+  fontFamily: 'Poppins-Regular',
   
 }
 })

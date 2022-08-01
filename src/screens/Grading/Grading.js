@@ -81,14 +81,15 @@ const Grading = () => {
             width: '100%',
           }}>
           <ImageBackground
-            style={{height: 200}}
+            style={{paddingVertical:'26%'}}
             borderRadius={5}
             resizeMode="cover"
             source={require('../../../assets/images/psabanner.png')}
           />
-          <View style={{paddingHorizontal: 10, marginVertical: 25}}>
+          <View style={{paddingHorizontal: 5, marginVertical: 25,width:'100%'}}>
             <FlatList
               horizontal
+              style={{margin:0,}}
               data={persons}
               renderItem={({item}) => (
                 <PriceCard
@@ -130,9 +131,8 @@ const styles = StyleSheet.create({
     marginBottom: '2%',
   },
   title: {
-    fontFamily: 'Poppins-Light',
+    fontFamily: 'Poppins-Bold',
     fontSize: 15,
-    fontWeight: 'bold',
     color: '#000',
     marginBottom: 10,
   },

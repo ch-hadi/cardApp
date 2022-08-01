@@ -1,11 +1,13 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import {StyleSheet,KeyboardAvoidingView} from 'react-native'
 import React from 'react'
 import BottomTab from '../../components/Tabs/BottomTab/BottomTab'
 // import BottomTab from '../../components/Tabs/BottomTab/BottomTab'
 
 const Main = () => {
   return (
-    <BottomTab/>
+    // <KeyboardAvoidingView  behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={{flex:1,height:'100%'}}>
+      <BottomTab/>
+    // </KeyboardAvoidingView>
   )
 }
 

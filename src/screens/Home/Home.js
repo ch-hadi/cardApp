@@ -97,7 +97,7 @@ const Home = ({navigation}) => {
     <SafeAreaView>
       <ScrollView style={{backgroundColor: 'black'}}>
         <View style={styles.mainContainor}>
-          <Text style={styles.title}>Card Cave Centeral</Text>
+          {/* <Text style={styles.title}>Card Cave Centeral</Text> */}
           <View style={styles.welcomeImage1}>
             <ImageBackground
               resizeMode="cover"
@@ -105,8 +105,9 @@ const Home = ({navigation}) => {
               source={require('../../../assets/images/groupCardYellow.png')}>
               <Text style={styles.imageTitle}>PSA AND CSG GRADING SERVICE</Text>
               <View style={styles.seeGradingBtn}>
-                <AButton title={'See Grading'} onPress={seeGrading} />
+                <AButton title={'See Grading'} onPress={seeGrading} Padding={10} borderColor='transparent' />
               </View>
+              {/* <Text style={{position:'absolute',right:0}}>Skip</Text> */}
             </ImageBackground>
           </View>
           <View style={styles.welcomeImage2}>
@@ -156,8 +157,9 @@ const Home = ({navigation}) => {
               backgroundColor="transparent"
               title={'Join now!'}
               borderColor="#2240FF"
-              fontWeight="600"
+              fontWeight="800"
               onPress={joinNow}
+              Padding={10}
             />
           </View>
           <View
@@ -231,11 +233,12 @@ const styles = StyleSheet.create({
     bottom: '5%',
   },
   CardsTopTitle: {
-    fontSize: 17,
-    fontWeight: 'bold',
-    color: '#000',
+    fontSize: 15,
+    color: '#000000',
     marginVertical: 6,
     paddingHorizontal: 3,
+    fontFamily:'Poppins-Regular',
+    fontWeight:'800'
   },
   mostPopularCard: {
     width: '100%',
@@ -244,7 +247,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   btnContainer: {
-    width: '85%',
+    width: '75%',
     borderRadius: 10,
     marginBottom: '5%',
   },
@@ -255,7 +258,8 @@ const styles = StyleSheet.create({
   },
   learnMore: {
     color: '#2240FF',
-    fontSize: 15,
-    fontWeight: '500',
+    fontSize: 14,
+    // fontWeight: '700',
+    fontFamily:'Poppins-Bold',
   },
 });

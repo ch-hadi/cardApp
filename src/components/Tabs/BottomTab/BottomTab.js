@@ -15,6 +15,7 @@ function MyTabs() {
         tabBarActiveTintColor: 'blue',
         tabBarInactiveTintColor: 'black',
         headerTransparent: true,
+        tabBarHideOnKeyboard:true,
         tabBarStyle: {
           borderTopWidth: 0,
           paddingBottom: 10,
