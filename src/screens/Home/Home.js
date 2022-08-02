@@ -11,63 +11,13 @@ import React from 'react';
 import AButton from '../../components/Button/Button';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import SimpleCard from '../../components/Card/SimpleCard';
-const checkStoreFlatListData = [
-  {
-    id: 1,
-    image: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 2,
-    name: 'Dog',
-  },
-  {
-    id: 3,
-    image: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 4,
-    image: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 5,
-    image: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 6,
-    image: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 7,
-    image: require('../../../assets/images/sc1.png'),
-  },
-];
-const mostPopularData = [
-  {
-    id: 1,
-    buttonTitle: 'Check Ebay Store',
-    title: 'Most Popular Cards',
-    source: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 2,
-    buttonTitle: 'Google Store',
-    title: 'Common Card',
-    source: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 3,
-    buttonTitle: 'Card Express',
-    title: 'Most Popular Cards',
-    source: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 4,
-    buttonTitle: 'Check Ebay Store',
-    title: 'Common Card',
-    source: require('../../../assets/images/sc1.png'),
-  },
-];
+import { useSelector } from 'react-redux';
+// const checkStoreFlatListData = [];
 const Home = ({navigation}) => {
+
+  const mostPopularData = useSelector((state)=>state.onlineStoreData.onlineStoreData);
+  const checkStoreFlatListData = useSelector((state)=>state.onlineStoreData.checkStoreImages);
+
   const ItemRender = ({image}) => (
     <View>
       <Image style={{borderRadius: 5, marginBottom: 10}} source={image} />

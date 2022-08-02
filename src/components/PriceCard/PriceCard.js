@@ -2,28 +2,6 @@ import {StyleSheet, Text, View, FlatList} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import AButton from '../Button/Button';
-const persons = [
-  {
-    id: '1',
-    name: '1-4 CARDS: Add $3.75 For Return Shipping  ',
-    priceSubHeading: 'CSG GRADING SERVICE',
-  },
-  {
-    id: '2',
-    name: '5-19 CARDS: Add$7.99 For Return Shipping',
-    priceSubHeading: 'ECONOMY PSA GRADING SERVICE',
-  },
-  {
-    id: '3',
-    name: '20-25 CARDS:Add $14.99 For Return Shipping',
-    priceSubHeading: 'REGULAR PSA GRADING SERVICE',
-  },
-  {
-    id: '4',
-    name: '26+ CARDS: Add $19.99 For Return Shipping',
-    priceSubHeading: 'EXPRESS PSA GRADING SERVICE',
-  },
-];
 
 const PriceCard = ({
   price,
@@ -106,17 +84,18 @@ const PriceCard = ({
         />
         <View
           style={{ marginVertical: 15,}}>
-          {persons.map(item => (
+          {list?.map(item => (
             <View
               style={{flexDirection: 'row', marginVertical: 5, alignItems:'center'}}
-              key={item.id}>
+              // key={item.id}
+              >
               <Icon
                 name="done"
                 color={bgColor ? '#46D68C' : iconColor ? iconColor : '#F3B007'}
                 size={25}
               />
               <Text
-                key={item.id}
+                // key={item.id}
                 style={{
                   fontSize: 12,
                   paddingLeft: 10,
@@ -125,11 +104,12 @@ const PriceCard = ({
                   // width:'90%',
     
                 }}>
-                {item.name}
+                {item}
               </Text>
             </View>
-          ))}
-        </View>
+         ))}
+         </View>
+          
       </View>
       <View style={styles.content}>
         <Text
@@ -139,14 +119,7 @@ const PriceCard = ({
             paddingHorizontal: '1%',
             color:'black'
           }}>
-          *CARDS MUST BE $999 OR LESS IN VALUE FOR ECONOMY, BETWEEN $1,000 AND
-          $1,499 FOR REGULAR, AND BETWEEN $1,500 AND $2,499 FOR EXPRESS. YOU
-          MUST SEPARATE YOUR CARDS INTO CATEGORIES FOR THE VALUE GRADING
-          SERVICE, LISTED IN STEP 2 BELOW. **PLEASE INSURE YOUR CARDS FOR THEIR
-          ESTIMATED VALUE. WE ARE NOT RESPONSIBLE FOR ANY LOST OR DAMAGED ITEMS
-          IN TRANSIT. ***IF YOU DO NOT HAVE THE PROPER TOP LOADER PSA REQUIRES,
-          WE WILL PROVIDE THE PENNY SLEEVES AND GRADING CARD SAVER UNDER VIP
-          PACKAGE! (.75 CENT CHARGE PER CARD)
+          {Content}
         </Text>
         <Text
           style={{
@@ -187,7 +160,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderColor: 'rgba(100,100,100,0.5)',
     borderWidth: 1,
-    paddingVertical: 60,
+    paddingVertical: 40,
     paddingHorizontal:10,
    
   },
