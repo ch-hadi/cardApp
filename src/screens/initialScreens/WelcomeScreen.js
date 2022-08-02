@@ -1,33 +1,37 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet,View} from 'react-native';
 import React from 'react';
 import PaginationDot from 'react-native-animated-pagination-dot';
 // import Button from '../../components/Button/Button';
 import AButton from '../../components/Button/Button';
 import SplashScreenCard from '../../components/SplashScreenCompo/SplashScreenCard';
 import SplashScreenImage from '../../components/SplashScreenCompo/SplashScreenImage';
-
+import { useDimensions } from '@react-native-community/hooks'
 const WelcomeScreen = ({navigation}) => {
   const [curPage, setCurPage] = React.useState(0);
 
+  const dimensions = useDimensions()
+// or
+const { width, height } = useDimensions().window
+// or
+const screen = useDimensions().screen
   const handlePress = () => {
-    setCurPage(curPage + 1);
-    if (curPage >= 3) {
+    setCurPage(curPage+1);
+    if (curPage>=3) {
       navigation.navigate('StrtExploring')
-      // setCurPage(0);
-      
     }
   };
-
   return (
     <View style={styles.main}>
       <View style={styles.welcomeImage1}>
         {curPage == 0 ? (
           <SplashScreenImage
             source={require('../../../assets/images/handeWithColor.jpg')}
+            
           />
         ) : curPage == 1 ? (
           <SplashScreenImage
             source={require('../../../assets/images/groupCards.png')}
+            backgroundColor={'#E3E1EC'}
           />
         ) : curPage == 2 ? (
           <SplashScreenImage
@@ -83,7 +87,18 @@ const WelcomeScreen = ({navigation}) => {
           />
         </View>
         <View style={styles.btn}>
-          <AButton title={'Next'} onPress={handlePress} />
+          <AButton title={'Next'} fontSize={15} borderColor='transparent' Padding={10} onPress={()=>{
+            setCurPage(curPage+1);
+            if (curPage>=3) {
+              navigation.navigate('StrtExploring')
+              // return
+            }
+            if(curPage == 3){
+              setCurPage(0)
+              // console.log(curPage)
+            }
+            
+          }} />
         </View>
       </View>
     </View>
@@ -94,19 +109,21 @@ export default WelcomeScreen;
 
 const styles = StyleSheet.create({
   main: {
-    width: '100%',
-    height: '100%',
-    // flex:1,
+    // width: '100%',
+    // height: '100%',
+    flex:1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   welcomeImage1: {
-    flex: 1.2,
+    // flex: 0.6,
+    height:'55%',
     backgroundColor: '#2240FF',
     width: '100%',
   },
   welcomeImage: {
-    flex: 0.8,
+    // flex: 0.4,\
+    height:'45%',
     backgroundColor: '#fff',
     width: '100%',
     alignItems: 'center',
@@ -128,8 +145,9 @@ const styles = StyleSheet.create({
   },
   paginate: {
     // width:'90%',
-    position: 'absolute',
-    bottom: '40%',
+    // position: 'absolute',
+    // bottom: '40%',
+    // marginTop:'0%'
   },
   textWelcome: {
     fontWeight: '700',

@@ -11,63 +11,13 @@ import React from 'react';
 import AButton from '../../components/Button/Button';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import SimpleCard from '../../components/Card/SimpleCard';
-const checkStoreFlatListData = [
-  {
-    id: 1,
-    image: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 2,
-    name: 'Dog',
-  },
-  {
-    id: 3,
-    image: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 4,
-    image: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 5,
-    image: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 6,
-    image: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 7,
-    image: require('../../../assets/images/sc1.png'),
-  },
-];
-const mostPopularData = [
-  {
-    id: 1,
-    buttonTitle: 'Check Ebay Store',
-    title: 'Most Popular Cards',
-    source: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 2,
-    buttonTitle: 'Google Store',
-    title: 'Common Card',
-    source: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 3,
-    buttonTitle: 'Card Express',
-    title: 'Most Popular Cards',
-    source: require('../../../assets/images/sc1.png'),
-  },
-  {
-    id: 4,
-    buttonTitle: 'Check Ebay Store',
-    title: 'Common Card',
-    source: require('../../../assets/images/sc1.png'),
-  },
-];
+import { useSelector } from 'react-redux';
+// const checkStoreFlatListData = [];
 const Home = ({navigation}) => {
+
+  const mostPopularData = useSelector((state)=>state.onlineStoreData.onlineStoreData);
+  const checkStoreFlatListData = useSelector((state)=>state.onlineStoreData.checkStoreImages);
+
   const ItemRender = ({image}) => (
     <View>
       <Image style={{borderRadius: 5, marginBottom: 10}} source={image} />
@@ -97,7 +47,7 @@ const Home = ({navigation}) => {
     <SafeAreaView>
       <ScrollView style={{backgroundColor: 'black'}}>
         <View style={styles.mainContainor}>
-          <Text style={styles.title}>Card Cave Centeral</Text>
+          {/* <Text style={styles.title}>Card Cave Centeral</Text> */}
           <View style={styles.welcomeImage1}>
             <ImageBackground
               resizeMode="cover"
@@ -105,8 +55,9 @@ const Home = ({navigation}) => {
               source={require('../../../assets/images/groupCardYellow.png')}>
               <Text style={styles.imageTitle}>PSA AND CSG GRADING SERVICE</Text>
               <View style={styles.seeGradingBtn}>
-                <AButton title={'See Grading'} onPress={seeGrading} />
+                <AButton title={'See Grading'} onPress={seeGrading} Padding={10} borderColor='transparent' />
               </View>
+              {/* <Text style={{position:'absolute',right:0}}>Skip</Text> */}
             </ImageBackground>
           </View>
           <View style={styles.welcomeImage2}>
@@ -156,8 +107,9 @@ const Home = ({navigation}) => {
               backgroundColor="transparent"
               title={'Join now!'}
               borderColor="#2240FF"
-              fontWeight="600"
+              fontWeight="800"
               onPress={joinNow}
+              Padding={10}
             />
           </View>
           <View
@@ -231,11 +183,12 @@ const styles = StyleSheet.create({
     bottom: '5%',
   },
   CardsTopTitle: {
-    fontSize: 17,
-    fontWeight: 'bold',
-    color: '#000',
+    fontSize: 15,
+    color: '#000000',
     marginVertical: 6,
     paddingHorizontal: 3,
+    fontFamily:'Poppins-Regular',
+    fontWeight:'800'
   },
   mostPopularCard: {
     width: '100%',
@@ -244,7 +197,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   btnContainer: {
-    width: '85%',
+    width: '75%',
     borderRadius: 10,
     marginBottom: '5%',
   },
@@ -255,7 +208,8 @@ const styles = StyleSheet.create({
   },
   learnMore: {
     color: '#2240FF',
-    fontSize: 15,
-    fontWeight: '500',
+    fontSize: 14,
+    // fontWeight: '700',
+    fontFamily:'Poppins-Bold',
   },
 });

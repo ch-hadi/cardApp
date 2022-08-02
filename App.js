@@ -7,12 +7,18 @@ import StrtExploring from './src/screens/SplashScreen/StrtExploring';
 import Main from './src/screens/Main/Main';
 import About from './src/screens/About/About';
 import { ThemeProvider } from 'react-native-elements';
-// import SplashScreen from 'react-native-splash-screen';
+import SplashScreen from 'react-native-splash-screen';
+import { store } from './src/store/store';
+import { Provider } from 'react-redux';
 // import BottomTab from './src/components/Tabs/BottomTab/BottomTab';
 const Stack = createNativeStackNavigator();
 const App = () => {
+  useEffect(()=>{
+    SplashScreen.hide()
+  },[])
   return (
-    <View style={{flex: 1, backgroundColor: 'black'}}>
+   <Provider store={store}>
+     <View style={{flex: 1}}>
       <NavigationContainer>
         <ThemeProvider>
         <Stack.Navigator>
@@ -40,6 +46,7 @@ const App = () => {
         </ThemeProvider>
       </NavigationContainer>
     </View>
+   </Provider>
   );
 };
 

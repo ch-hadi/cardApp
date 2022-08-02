@@ -4,6 +4,7 @@ import {
   Text,
   View,
   ScrollView,
+  Linking,
 } from 'react-native';
 import React from 'react';
 import AButton from '../../components/Button/Button';
@@ -66,21 +67,22 @@ const mostPopularData = [
   },
 ];
 const Social = () => {
+  const joinFacebook = () => {
+    Linking.openURL('https://www.facebook.com/groups/Zaidaliofficial').catch(
+      error => console.error('error', error),
+    );
+  };
 
-  const joinFacebook=()=>{
-    alert('Facebook')
-  }
-  
-  const joinLinkedIn=()=>{
-    alert('LinkedIn')
-  }
+  const joinLinkedIn = () => {
+    alert('LinkedIn');
+  };
 
-  const joinTwitter=()=>{
-    alert('Twitter')
-  }
+  const joinTwitter = () => {
+    alert('Twitter');
+  };
   return (
     <SafeAreaView>
-      <ScrollView style={{width:'100%'}}>
+      <ScrollView style={{width: '100%'}}>
         <View style={styles.mainContainor}>
           <Text style={styles.title}>Groups</Text>
           <View
@@ -89,10 +91,15 @@ const Social = () => {
               width: '100%',
               marginVertical: 10,
               paddingBottom: '2%',
-              backgroundColor: '#fff',            
+              backgroundColor: '#fff',
             }}>
             <Text style={styles.CardsTopTitle}>Contact the Cave</Text>
-            <Text>
+            <Text
+              style={{
+                fontFamily: 'Poppins-Regular',
+                fontSize: 13,
+                color: '#000000',
+              }}>
               Come join our Private Card Cave Central Facebook Group to receive
               special promotions, discounts and live events! {'\n'}
               {'\n'}With an interactive community of hundreds of sports fans,
@@ -107,42 +114,38 @@ const Social = () => {
               source={require('../../../assets/images/joinFacebook.png')}
             />
           </View>
-          
         </View>
         <View style={styles.btnContainer}>
-        <AButton
-              textColor="#000"
-              backgroundColor="transparent"
-              title={'Join the facebook Group'}
-              borderColor="#000"
-              fontWeight="600"
-              onPress={joinFacebook}
-              icon={require('../../../assets/icons/facebook.png')}
-            />
-            <Text style={styles.joinPlateForm}>
-            Or Join other Platforms
-            </Text>
-            <AButton
-              textColor="#000"
-              backgroundColor="transparent"
-              title={'Join Twitter'}
-              borderColor="#000"
-              fontWeight="600"
-              onPress={joinTwitter}
-              icon={require('../../../assets/icons/twitter.png')}
-            />
-            <Text></Text>
-            <AButton
-              textColor="#000"
-              backgroundColor="transparent"
-              title={'Join Linkedin'}
-              borderColor="#000"
-              fontWeight="600"
-              onPress={joinLinkedIn}
-              icon={require('../../../assets/icons/linkedIn.png')}
-            />
+          <AButton
+            textColor="#000"
+            backgroundColor="transparent"
+            title={'Join the facebook Group'}
+            borderColor="#B8B8B8"
+            fontWeight="800"
+            onPress={joinFacebook}
+            icon={require('../../../assets/icons/facebook.png')}
+          />
+          <Text style={styles.joinPlateForm}>Or Join other Platforms</Text>
+          <AButton
+            textColor="#000"
+            backgroundColor="transparent"
+            title={'Join Twitter'}
+            borderColor="#B8B8B8"
+            fontWeight="800"
+            onPress={joinTwitter}
+            icon={require('../../../assets/icons/twitter.png')}
+          />
+          <Text></Text>
+          <AButton
+            textColor="#000"
+            backgroundColor="transparent"
+            title={'Join Linkedin'}
+            borderColor="#B8B8B8"
+            fontWeight="800"
+            onPress={joinLinkedIn}
+            icon={require('../../../assets/icons/linkedIn.png')}
+          />
         </View>
-       
       </ScrollView>
     </SafeAreaView>
   );
@@ -154,14 +157,13 @@ const styles = StyleSheet.create({
   mainContainor: {
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
-    width:'100%',  
+    width: '100%',
   },
   title: {
     marginTop: '5%',
-    marginBottom: '2%',
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: '#000',
+    // marginBottom: '2%',
+    fontFamily: 'Poppins-Bold',
+    color: '#000000',
   },
   welcomeImage1: {
     width: '100%',
@@ -178,6 +180,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 30,
     paddingHorizontal: 20,
+    fontFamily: 'Poppins-Light',
   },
   seeGradingBtn: {
     position: 'absolute',
@@ -186,11 +189,12 @@ const styles = StyleSheet.create({
     bottom: '5%',
   },
   CardsTopTitle: {
-    fontSize: 17,
-    fontWeight: 'bold',
+    fontSize: 15,
+    fontWeight: '700',
     color: '#000',
     marginVertical: 6,
     paddingHorizontal: 3,
+    fontFamily: 'Poppins-Light',
   },
   mostPopularCard: {
     width: '100%',
@@ -201,24 +205,27 @@ const styles = StyleSheet.create({
   btnContainer: {
     borderRadius: 10,
     marginBottom: '5%',
-    width:'100%',
-    paddingHorizontal:12,
+    width: '100%',
+    paddingHorizontal: 12,
     // backgroundColor:'pink',
-    alignItems:'center'
+    alignItems: 'center',
   },
   storyContent: {
     fontSize: 15,
     color: '#000',
     marginVertical: '2%',
+    fontFamily: 'Poppins-Light',
   },
   learnMore: {
     color: '#2240FF',
     fontSize: 15,
     fontWeight: '500',
+    fontFamily: 'Poppins-Light',
   },
-  joinPlateForm:{
-    fontSize:12,
-    color:'#000',
-    marginVertical:10
-  }
+  joinPlateForm: {
+    fontSize: 12,
+    color: '#000',
+    marginVertical: 30,
+    fontFamily: 'Poppins-Light',
+  },
 });

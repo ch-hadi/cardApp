@@ -12,7 +12,7 @@ const StrtExploring = ({navigation}) => {
       <Text textBreakStrategy='balanced' style={styles.heading}>Start Exploring Card Cave Centeral</Text>
       <Text textBreakStrategy='balanced' style={styles.content}>This is your one stop shop for all of your collectible needs. With over 20 years in the business, we specialize in PSA Card Grading and Hobby Boxes.</Text>
       <View style={styles.btn}>
-      <AButton title={'Get Started'} onPress={getStarted}/>
+      <AButton title={'Get Started'} Padding={10} onPress={getStarted} borderColor='transparent'/>
       </View>
     </View>
   )
@@ -23,24 +23,28 @@ export default StrtExploring
 const styles = StyleSheet.create({
   main:{
     flex:1,
+    // width:'100%',
     alignItems:'center',
     justifyContent:'center',
     marginHorizontal:10,
+    // height:'100%'
   },
   heading:{
     fontSize:25,
-    fontWeight:'bold',
+    // fontWeight:'bold',
     color:'#000',
-    // textAlign:'justify'    
+    // textAlign:'justify' 
+    fontFamily: 'Poppins-Bold',   
   },
   content:{
     marginVertical:10,
     fontSize:15,
     color:'black',
     // textShadowOffset:'#6060'
+    fontFamily: 'Poppins-Regular',
   },
   btn:{
-    width:'100%',
+    width:'90%',
     position:'absolute',
     bottom:'10%'
   }
